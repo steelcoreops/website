@@ -232,7 +232,7 @@ export default function App() {
                 <span className="text-rust-base">No more missed revenue.</span>
               </h1>
               <p className="text-xl md:text-2xl text-steel-base mb-10 max-w-2xl leading-relaxed">
-                Most trades businesses leave <span className="font-bold text-rust-base">£80-120k</span> on the table annually. We close those leaks.
+                Every trades business leaks revenue at the same five points. We close all of them.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-12">
                 <Button>Book a Free Call</Button>
@@ -268,7 +268,7 @@ export default function App() {
         <div className="container mx-auto px-6 pt-12">
           <SectionHeading 
             title="Where Your Revenue Leaks"
-            subtitle="We've analysed hundreds of trades businesses. They all leak revenue at the same 5 points."
+            subtitle="Every trades business leaks revenue at the same 5 points."
           />
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
@@ -531,7 +531,7 @@ export default function App() {
             <div className="relative z-10 text-center">
               <SectionHeading 
                 centered
-                title="See Where You're Leaving Money on the Table"
+                title="Find out where your revenue is leaking."
                 subtitle="Book a free 15-minute call. We'll discuss your business and see if there's a fit."
               />
               <div className="flex flex-col items-center gap-6">
