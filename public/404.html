@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1A2332" />
+    <title>404 — Page not found | Steel Core Operations</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;700&display=swap"
+    />
+    <style>
+      :root {
+        --steel-dark: #1a2332;
+        --steel-base: #34495e;
+        --rust-base: #e07f3e;
+        --cloud: #eef1f4;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { height: 100%; }
+      body {
+        font-family: 'Archivo', system-ui, sans-serif;
+        background: var(--cloud);
+        color: var(--steel-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .container { max-width: 640px; text-align: center; }
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 56px;
+      }
+      .mark {
+        width: 40px;
+        height: 40px;
+        background: var(--steel-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .mark::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        border: 2px solid var(--rust-base);
+        transform: rotate(45deg);
+      }
+      .wordmark {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+      }
+      .wordmark span { color: var(--rust-base); }
+      .code {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: clamp(96px, 22vw, 200px);
+        line-height: 0.9;
+        letter-spacing: -0.04em;
+        color: var(--steel-dark);
+        margin-bottom: 16px;
+      }
+      .code span { color: var(--rust-base); }
+      h1 {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: clamp(20px, 4vw, 32px);
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        margin-bottom: 16px;
+      }
+      p {
+        font-size: 17px;
+        color: var(--steel-base);
+        margin-bottom: 40px;
+        line-height: 1.5;
+      }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 32px;
+        background: var(--rust-base);
+        color: white;
+        font-weight: 700;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        text-decoration: none;
+        box-shadow: 3px 3px 0 0 var(--steel-dark);
+        transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+      }
+      .button:hover {
+        background: #c8631f;
+        box-shadow: none;
+        transform: translate(2px, 2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <div class="mark"></div>
+        <div class="wordmark">Steel Core <span>Ops</span></div>
+      </div>
+      <div class="code">4<span>0</span>4</div>
+      <h1>Page not found</h1>
+      <p>The page you were looking for doesn't exist or has been moved.</p>
+      <a href="/" class="button">Back to home</a>
+    </div>
+  </body>
+</html>
