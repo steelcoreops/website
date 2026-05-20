@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 80" width="460" height="80" role="img" aria-label="Steel Core Ops">
+  <title>Steel Core Ops</title>
+  <!-- Mark (inverted for dark backgrounds: orange fill, white outline) -->
+  <rect x="0" y="0" width="80" height="80" fill="#E07F3E"/>
+  <rect x="16" y="16" width="48" height="48" fill="none" stroke="#FFFFFF" stroke-width="4" transform="rotate(45 40 40)"/>
+  <!-- Wordmark -->
+  <text x="100" y="56" font-family="'Archivo Black', Impact, 'Arial Black', sans-serif" font-size="44" font-weight="900" letter-spacing="-1" fill="#FFFFFF">STEEL CORE <tspan fill="#E07F3E">OPS</tspan></text>
+</svg>
