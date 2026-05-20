@@ -15,6 +15,7 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html'),
         mtcProposal: path.resolve(__dirname, 'proposals/master-the-curriculum/index.html'),
+        termsDiscovery: path.resolve(__dirname, 'terms-discovery/index.html'),
       },
     },
   },
