@@ -166,10 +166,14 @@ export const TermsDiscovery = () => {
 
         <Clause num="10" title="Cancellation">
           <p>
-            If you wish to cancel the Discovery phase before work has begun, contact us as soon as possible and we will refund the fee in
-            full.
+            The Discovery fee is payable in full before work begins and, once work has been scheduled, is non-refundable. Scheduling occurs
+            when we confirm a start date for the Discovery phase in writing.
           </p>
-          <p>If work has already begun, we will refund the fee in proportion to the work not yet carried out, at our reasonable assessment.</p>
+          <p>If you wish to cancel before the work has been scheduled, contact us and we will refund the fee in full.</p>
+          <p>
+            If we are unable to proceed with the Discovery phase for any reason, we will notify you promptly and refund the Discovery fee
+            in full.
+          </p>
         </Clause>
 
         <Clause num="11" title="Governing law">
