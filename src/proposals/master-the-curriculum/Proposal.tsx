@@ -157,7 +157,7 @@ export const Proposal = () => {
           <SectionLabel>02 · Our Approach</SectionLabel>
           <H2>Why this isn't just a plugin install</H2>
           <p className="text-[17px] text-steel-dark mb-4 max-w-[65ch]">
-            There's a shorter version of this project — install the plugin, configure some seats, hand it over. You may well see quotes
+            There's a shorter version of this project: install the plugin, configure some seats, hand it over. You may well see quotes
             structured that way, and we want to be upfront about why ours isn't.
           </p>
           <p className="mb-4 max-w-[65ch]">
@@ -321,8 +321,8 @@ export const Proposal = () => {
           <p className="mb-6 max-w-[65ch]">Roughly 7 to 9 weeks end to end, with a buffer before your busiest month kicks in.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 bg-paper border-2 border-steel-dark rounded-sm">
-            <TimelineStep range="Weeks 1 – 2" activity="Discovery & site audit" mobileBorderBottom />
-            <TimelineStep range="Weeks 3 – 8" activity="Build & configure on staging" mobileBorderBottom />
+            <TimelineStep range="Weeks 1-2" activity="Discovery & site audit" mobileBorderBottom />
+            <TimelineStep range="Weeks 3-8" activity="Build & configure on staging" mobileBorderBottom />
             <TimelineStep range="Final Week" activity="Testing, handover, go live" mobileBorderBottom />
             <TimelineStep range="September" activity="Live and ready for peak" isLast />
           </div>

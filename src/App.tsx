@@ -239,7 +239,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* Decorative element — softened: single oversized rotated outline square */}
+        {/* Decorative element: single oversized rotated outline square */}
         <div className="absolute -right-32 top-1/2 -translate-y-1/2 hidden lg:block pointer-events-none">
           <div className="w-[480px] h-[480px] border-2 border-rust-base/15 rotate-45 rounded-sm"></div>
         </div>
@@ -288,7 +288,7 @@ export default function App() {
             <div className="bg-steel-dark p-8 flex flex-col justify-center rounded-sm">
               <h4 className="text-white text-sm font-bold uppercase tracking-[0.2em] mb-4 font-mono">The Impact</h4>
               <p className="text-3xl font-display text-white leading-tight tracking-tight uppercase">
-                Average business loses <span className="text-rust-base">£80–120k</span> annually across these 5 leaks.
+                Average business loses <span className="text-rust-base">£80-120k</span> annually across these 5 leaks.
               </p>
             </div>
           </div>
@@ -313,8 +313,8 @@ export default function App() {
                   <div>
                     <h4 className="text-xl font-display uppercase tracking-tight mb-2">Build Phase</h4>
                     <p className="text-cloud/70">
-                      6-week intensive build. We install your complete revenue infrastructure — CRM, automations, dashboards — while you stay
-                      focused on your clients.
+                      6-week intensive build. We install your complete revenue infrastructure (CRM, automations, dashboards) while you
+                      stay focused on your clients.
                     </p>
                   </div>
                 </div>
@@ -406,7 +406,7 @@ export default function App() {
               <StepCard
                 number="03"
                 title="6-Week Build"
-                description="We install everything — CRM, automations, tracking — while you keep showing up for your clients."
+                description="We install everything (CRM, automations, tracking) while you keep showing up for your clients."
               />
               <StepCard
                 number="04"
