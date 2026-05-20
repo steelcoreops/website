@@ -196,7 +196,7 @@ export const TermsDiscovery = () => {
         {/* FOOTER */}
         <div className="mt-12 pt-7 border-t-2 border-steel-dark flex flex-wrap justify-between items-center gap-3 font-mono text-xs text-steel-base tracking-[0.05em] uppercase">
           <div>Steel Core Operations</div>
-          <div>Discovery Phase Terms · V1</div>
+          <div>Last updated May 2026</div>
         </div>
       </div>
     </div>
