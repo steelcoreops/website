@@ -1,20 +1,37 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Steel Core Operations
 
-# Run and deploy your AI Studio app
+Marketing site for Steel Core Operations — revenue infrastructure for coaches, consultants, and agencies.
 
-This contains everything you need to run your app locally.
+## Stack
 
-View your app in AI Studio: https://ai.studio/apps/8956b0ea-39fb-4859-9f06-92024fe06515
+- React 19 + TypeScript
+- Vite 6
+- Tailwind CSS 4
+- Motion (animations)
+- lucide-react (icons)
 
-## Run Locally
+## Run locally
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+npm run dev
+```
 
+Site is served at `http://localhost:3000`.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Scripts
+
+- `npm run dev` — start dev server
+- `npm run build` — production build to `dist/`
+- `npm run preview` — preview production build
+- `npm run lint` — TypeScript type-check (`tsc --noEmit`)
+- `npm run clean` — remove `dist/`
+
+## Pages
+
+- `/` — main marketing site
+- `/proposals/master-the-curriculum/` — client proposal (unlisted, noindex)
+
+## Deploy
+
+Deployed via Vercel. Pushing to `main` triggers a production deploy automatically.
