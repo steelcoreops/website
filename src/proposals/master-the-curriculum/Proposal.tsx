@@ -333,16 +333,10 @@ export const Proposal = () => {
           <div className="absolute inset-2 border-2 border-steel-dark pointer-events-none rounded-sm"></div>
           <div className="relative z-10">
             <h2 className="font-display text-2xl md:text-3xl uppercase text-steel-dark mb-3 tracking-tight leading-none">Ready to move?</h2>
-            <p className="text-steel-dark text-base mb-6 max-w-[50ch]">
-              Pick an option and we'll get a contract over for the discovery phase. If anything needs talking through first, we're happy to
-              jump on a call.
+            <p className="text-steel-dark text-base max-w-[50ch]">
+              Pick an option and let us know via email. We'll get a contract over for the discovery phase. If anything needs talking
+              through first, we're happy to jump on a call.
             </p>
-            <a
-              href="mailto:hello@steelcoreoperations.com"
-              className="inline-block bg-steel-dark text-white py-4 px-9 font-bold text-sm uppercase tracking-[0.15em] hover:bg-black transition-colors"
-            >
-              Let's get started
-            </a>
           </div>
         </div>
 
