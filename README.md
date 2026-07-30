@@ -1,6 +1,6 @@
 # Steel Core Operations
 
-Marketing site for Steel Core Operations — revenue infrastructure for coaches, consultants, and agencies.
+Marketing site for Steel Core Operations — a senior delivery team across strategy, operations and technology.
 
 ## Stack
 
@@ -29,8 +29,15 @@ Site is served at `http://localhost:3000`.
 
 ## Pages
 
-- `/` — main marketing site
+- `/` — home
+- `/services/` — services
+- `/about/` — about
+- `/contact/` — contact
+- `/privacy/` — privacy policy
+- `/terms-discovery/` — Discovery Phase terms & conditions
 - `/proposals/master-the-curriculum/` — client proposal (unlisted, noindex)
+- `/proposals/master-the-curriculum/discovery/` — Discovery Report (unlisted, noindex)
+- `/archive/home-original/` — archived original homepage (unlisted, noindex; kept for reference/reuse)
 
 ## Deploy
 

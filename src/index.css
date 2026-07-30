@@ -5,6 +5,11 @@
   --font-display: "Archivo Black", "Archivo", ui-sans-serif, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
+  /* Marketing site (home/services/about/contact) typography */
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-tech: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
   --color-steel-dark: #1A2332;
   --color-steel-base: #34495E;
   --color-rust-base: #E07F3E;
@@ -12,6 +17,12 @@
   --color-cloud: #EEF1F4;
   --color-paper: #F5F7F9;
   --color-line: #D4D8DD;
+
+  /* Marketing site additions */
+  --color-steel-panel-2: #22304A;
+  --color-muted-dark: #96A4B5;
+  --color-bronze-lift: #E88C4E;
+  --color-line-dark: rgba(238, 241, 244, 0.14);
 
   --radius-sm: 4px;
 }

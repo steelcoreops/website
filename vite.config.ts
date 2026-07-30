@@ -14,10 +14,14 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
+        services: path.resolve(__dirname, 'services/index.html'),
+        about: path.resolve(__dirname, 'about/index.html'),
+        contact: path.resolve(__dirname, 'contact/index.html'),
         mtcProposal: path.resolve(__dirname, 'proposals/master-the-curriculum/index.html'),
         mtcDiscovery: path.resolve(__dirname, 'proposals/master-the-curriculum/discovery/index.html'),
         termsDiscovery: path.resolve(__dirname, 'terms-discovery/index.html'),
         privacy: path.resolve(__dirname, 'privacy/index.html'),
+        archiveHomeOriginal: path.resolve(__dirname, 'archive/home-original/index.html'),
       },
     },
   },
