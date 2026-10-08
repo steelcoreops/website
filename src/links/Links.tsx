@@ -6,12 +6,13 @@ import { CALENDLY_URL } from '../marketing/SiteNav';
 
 const LINKEDIN = 'https://www.linkedin.com/company/119313953';
 const DIAGNOSTIC = 'https://app.zenitro.co/r/digital-maturity';
-const BOOKING = `${CALENDLY_URL}?utm_source=websummit&utm_medium=qr`;
-const EMAIL = 'mailto:hello@steelcoreoperations.com?subject=Web%20Summit';
+const BOOKING = `${CALENDLY_URL}?utm_source=links&utm_medium=qr`;
+const EMAIL = 'mailto:hello@steelcoreoperations.com';
 
 const TEAM = [
-  { name: 'Rhiannon', role: 'COO', photo: '/team/rhiannon.jpeg', email: 'rhiannon@steelcoreoperations.com' },
-  { name: 'Shari', role: 'CTO', photo: '/team/shari.png', email: 'shari@steelcoreoperations.com' },
+  { name: 'Toni', role: 'Strategy', photo: '/team/toni-256.jpg' },
+  { name: 'Rhiannon', role: 'COO', photo: '/team/rhiannon.jpeg' },
+  { name: 'Shari', role: 'CTO', photo: '/team/shari.png' },
 ];
 
 const WAYS = [
@@ -48,16 +49,13 @@ const IconButton = ({ href, label, children, external }: { href: string; label: 
   </a>
 );
 
-export const WebSummit = () => {
+export const Links = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-cloud font-body text-[16px] leading-[1.6] text-steel-dark selection:bg-rust-base selection:text-white">
       <div className="mx-auto max-w-[480px] px-5 pb-12 pt-6">
         {/* HEADER */}
-        <div className="mb-10 flex items-center justify-between">
+        <div className="mb-10 flex items-center justify-center">
           <Logo size="sm" />
-          <span className="hidden whitespace-nowrap font-tech text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-rust-base min-[370px]:inline">
-            Web Summit 2026
-          </span>
         </div>
 
         {/* YOU MET */}
@@ -68,9 +66,9 @@ export const WebSummit = () => {
                 key={person.name}
                 src={person.photo}
                 alt={person.name}
-                width={96}
-                height={96}
-                className={`h-24 w-24 border-4 border-cloud object-cover outline outline-1 outline-steel-dark ${i === 0 ? '-rotate-3' : 'rotate-3'}`}
+                width={88}
+                height={88}
+                className={`h-[88px] w-[88px] border-4 border-cloud object-cover outline outline-1 outline-steel-dark ${['-rotate-6', 'relative z-10 -translate-y-1', 'rotate-6'][i]}`}
               />
             ))}
           </div>
@@ -78,7 +76,7 @@ export const WebSummit = () => {
             Great to meet you<span className="text-rust-base">.</span>
           </h1>
           <p className="mx-auto max-w-[36ch] text-steel-base">
-            Steel Core is a senior delivery team across strategy, operations and technology. Here's how to keep the conversation going.
+            Steel Core is a senior delivery team across strategy, operations and technology. Here's how to start, or continue, the conversation.
           </p>
         </section>
 
@@ -165,23 +163,6 @@ export const WebSummit = () => {
           <Button href={BOOKING} external>
             Book a call
           </Button>
-        </section>
-
-        {/* TEAM CONTACTS */}
-        <section className="mb-12">
-          <Kicker>Get in touch directly</Kicker>
-          <div className="mt-4 divide-y divide-line border-y border-line">
-            {TEAM.map((person) => (
-              <a key={person.name} href={`mailto:${person.email}?subject=Web%20Summit`} className="group flex items-center gap-4 py-4">
-                <img src={person.photo} alt="" width={48} height={48} className="h-12 w-12 flex-shrink-0 object-cover" />
-                <div className="min-w-0 flex-1">
-                  <div className="font-heading font-bold">{person.name}</div>
-                  <div className="truncate text-sm text-steel-base">{person.role}</div>
-                </div>
-                <Mail size={18} className="flex-shrink-0 text-rust-base" />
-              </a>
-            ))}
-          </div>
         </section>
 
         {/* LINKEDIN BANNER */}

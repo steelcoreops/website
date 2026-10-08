@@ -1,10 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { WebSummit } from './WebSummit';
+import { Links } from './Links';
 import '../index.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <WebSummit />
+    <Links />
   </StrictMode>,
 );

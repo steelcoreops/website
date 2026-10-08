@@ -22,7 +22,7 @@ export default defineConfig({
         termsDiscovery: path.resolve(__dirname, 'terms-discovery/index.html'),
         privacy: path.resolve(__dirname, 'privacy/index.html'),
         archiveHomeOriginal: path.resolve(__dirname, 'archive/home-original/index.html'),
-        websummit: path.resolve(__dirname, 'websummit/index.html'),
+        links: path.resolve(__dirname, 'links/index.html'),
       },
     },
   },
