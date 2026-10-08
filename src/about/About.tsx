@@ -8,7 +8,7 @@ import { reveal } from '../marketing/reveal';
 const TEAM = [
   {
     role: 'Operations',
-    name: 'Rhiannon Pruitt',
+    name: 'Rhiannon Leila',
     photo: '/team/rhiannon.jpeg',
     bio: 'Rhiannon makes operations work. She finds the bottlenecks, rebuilds how the work flows and keeps delivery on track once it starts. If it has to run smoothly and keep running, it sits with her.',
   },
