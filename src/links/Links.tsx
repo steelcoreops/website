@@ -7,7 +7,7 @@ import { CALENDLY_URL } from '../marketing/SiteNav';
 const LINKEDIN = 'https://www.linkedin.com/company/119313953';
 const DIAGNOSTIC = 'https://app.zenitro.co/r/digital-maturity';
 const BOOKING = `${CALENDLY_URL}?utm_source=links&utm_medium=qr`;
-const WHATSAPP = 'https://wa.me/351939383660?text=Hi%20Steel%20Core';
+const WHATSAPP = 'https://wa.me/351939383660?text=Hi%20Steel%20Core%20Operations';
 const EMAIL = 'mailto:hello@steelcoreoperations.com';
 
 const TEAM = [
@@ -83,22 +83,22 @@ export const Links = () => {
             Great to meet you<span className="text-rust-base">.</span>
           </h1>
           <p className="mx-auto max-w-[36ch] text-steel-base">
-            Steel Core is a senior delivery team across strategy, operations and technology. Here's how to start, or continue, the conversation.
+            Steel Core Operations is a senior delivery team across strategy, operations and technology. Here's how to start, or continue, the conversation.
           </p>
         </section>
 
         {/* SOCIAL ROW */}
         <div className="mb-12 flex justify-center gap-3">
-          <IconButton href={LINKEDIN} label="Steel Core on LinkedIn" external>
+          <IconButton href={LINKEDIN} label="Steel Core Operations on LinkedIn" external>
             <Linkedin size={20} />
           </IconButton>
-          <IconButton href={WHATSAPP} label="Message Steel Core on WhatsApp" external>
+          <IconButton href={WHATSAPP} label="Message Steel Core Operations on WhatsApp" external>
             <WhatsAppIcon />
           </IconButton>
-          <IconButton href={EMAIL} label="Email Steel Core">
+          <IconButton href={EMAIL} label="Email Steel Core Operations">
             <Mail size={20} />
           </IconButton>
-          <IconButton href="/" label="Steel Core website">
+          <IconButton href="/" label="Steel Core Operations website">
             <Globe size={20} />
           </IconButton>
         </div>
@@ -192,14 +192,14 @@ export const Links = () => {
           <Linkedin size={22} className="flex-shrink-0 text-steel-dark" />
           <div className="flex-1">
             <div className="font-heading font-bold">Follow us on LinkedIn</div>
-            <div className="text-sm text-steel-base">Steel Core</div>
+            <div className="text-sm text-steel-base">Steel Core Operations</div>
           </div>
           <ArrowUpRight size={18} className="text-steel-base transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </a>
 
         {/* FOOTER */}
         <footer className="flex items-center justify-between border-t border-steel-dark pt-6 font-tech text-[0.66rem] uppercase tracking-[0.14em] text-steel-base">
-          <span>Steel Core</span>
+          <span>Steel Core Operations</span>
           <a href="/privacy" className="transition-colors hover:text-rust-base">
             Privacy
           </a>
