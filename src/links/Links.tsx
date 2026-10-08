@@ -65,20 +65,8 @@ export const Links = () => {
           <Logo size="sm" />
         </div>
 
-        {/* YOU MET */}
-        <section className="mb-8 text-center">
-          <div className="mb-6 flex justify-center -space-x-4">
-            {TEAM.map((person, i) => (
-              <img
-                key={person.name}
-                src={person.photo}
-                alt={person.name}
-                width={88}
-                height={88}
-                className={`h-[88px] w-[88px] border-4 border-cloud object-cover outline outline-1 outline-steel-dark ${['-rotate-6', 'relative z-10 -translate-y-1', 'rotate-6'][i]}`}
-              />
-            ))}
-          </div>
+        {/* INTRO */}
+        <section className="mb-8 pt-4 text-center">
           <h1 className="mb-3 font-heading text-[clamp(2.1rem,10vw,2.6rem)] font-extrabold leading-[1.02] tracking-[-0.02em]">
             Great to meet you<span className="text-rust-base">.</span>
           </h1>
@@ -159,6 +147,30 @@ export const Links = () => {
             </div>
           </div>
           <div className="mt-1 font-tech text-[0.66rem] uppercase tracking-[0.14em] text-steel-base/70">Swipe &rarr;</div>
+        </section>
+
+        {/* TEAM */}
+        <section className="mb-14">
+          <Kicker>The team</Kicker>
+          <h2 className="mb-5 mt-4 font-heading text-[1.75rem] font-bold leading-[1.05] tracking-[-0.018em]">
+            The people you'll work with.
+          </h2>
+          <div className="grid grid-cols-3 gap-3">
+            {TEAM.map((person) => (
+              <div key={person.name}>
+                <img
+                  src={person.photo}
+                  alt={person.name}
+                  width={160}
+                  height={160}
+                  loading="lazy"
+                  className="mb-3 aspect-square w-full border border-steel-dark object-cover"
+                />
+                <div className="font-heading font-bold leading-tight">{person.name}</div>
+                <div className="mt-0.5 font-tech text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-rust-base">{person.role}</div>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* BOOK A CALL */}
