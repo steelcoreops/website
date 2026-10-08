@@ -11,9 +11,9 @@ const WHATSAPP = 'https://wa.me/351939383660?text=Hi%20Steel%20Core%20Operations
 const EMAIL = 'mailto:hello@steelcoreoperations.com';
 
 const TEAM = [
-  { name: 'Toni', role: 'Strategy', photo: '/team/toni-256.jpg' },
   { name: 'Rhiannon', role: 'COO', photo: '/team/rhiannon.jpeg' },
   { name: 'Shari', role: 'CTO', photo: '/team/shari.png' },
+  { name: 'Toni', role: 'CSO', photo: '/team/toni-256.jpg' },
 ];
 
 const WAYS = [
