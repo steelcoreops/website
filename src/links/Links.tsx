@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react';
-import { ArrowUpRight, Globe, Linkedin, Mail } from 'lucide-react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { ArrowUpRight, Globe, Linkedin, Mail, SendHorizontal, X } from 'lucide-react';
 import { Logo } from '../components/Logo';
 import { Kicker } from '../marketing/Kicker';
 import { CALENDLY_URL } from '../marketing/SiteNav';
@@ -7,7 +7,10 @@ import { CALENDLY_URL } from '../marketing/SiteNav';
 const LINKEDIN = 'https://www.linkedin.com/company/119313953';
 const DIAGNOSTIC = 'https://app.zenitro.co/r/digital-maturity';
 const BOOKING = `${CALENDLY_URL}?utm_source=links&utm_medium=qr`;
-const WHATSAPP = 'https://wa.me/351939383660?text=Hi%20Steel%20Core%20Operations';
+const WHATSAPP_NUMBER = '351939383660';
+const WHATSAPP_GREETING = 'Hi Steel Core Operations';
+const whatsappUrl = (text: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+const WHATSAPP = whatsappUrl(WHATSAPP_GREETING);
 const EMAIL = 'mailto:hello@steelcoreoperations.com';
 
 const TEAM = [
@@ -55,6 +58,121 @@ const IconButton = ({ href, label, children, external }: { href: string; label: 
     {children}
   </a>
 );
+
+const WhatsAppChat = () => {
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState('');
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    inputRef.current?.focus();
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
+
+  const send = () => {
+    window.open(whatsappUrl(message.trim() || WHATSAPP_GREETING), '_blank', 'noopener,noreferrer');
+    setMessage('');
+    setOpen(false);
+  };
+
+  return (
+    <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-5 z-50 flex flex-col items-end gap-3">
+      {open && (
+        <div
+          role="dialog"
+          aria-label="Chat with Steel Core Operations on WhatsApp"
+          className="w-[min(340px,calc(100vw-2.5rem))] overflow-hidden bg-white shadow-[0_12px_40px_rgba(26,35,50,0.25)]"
+        >
+          {/* Panel header */}
+          <div className="flex items-center gap-3 bg-steel-dark px-4 py-3.5 text-cloud">
+            <div className="flex -space-x-2">
+              {TEAM.map((person) => (
+                <img
+                  key={person.name}
+                  src={person.photo}
+                  alt=""
+                  width={32}
+                  height={32}
+                  className="h-8 w-8 rounded-full border-2 border-steel-dark object-cover"
+                />
+              ))}
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="font-heading text-[0.95rem] font-bold leading-tight">Steel Core Operations</div>
+              <div className="mt-0.5 flex items-center gap-1.5 whitespace-nowrap text-[0.74rem] text-muted-dark">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#25D366]" aria-hidden="true" />
+                We reply on WhatsApp
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Close chat"
+              className="flex h-8 w-8 items-center justify-center text-muted-dark transition-colors hover:text-cloud"
+            >
+              <X size={18} />
+            </button>
+          </div>
+
+          {/* Conversation */}
+          <div className="bg-paper px-4 py-5">
+            <div className="max-w-[85%] rounded-[2px_14px_14px_14px] bg-white px-3.5 py-2.5 text-[0.92rem] leading-snug shadow-[0_1px_2px_rgba(26,35,50,0.08)]">
+              Hi 👋 Thanks for stopping by. What can we help you with?
+            </div>
+          </div>
+
+          {/* Composer */}
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              send();
+            }}
+            className="flex items-end gap-2 border-t border-line p-3"
+          >
+            <textarea
+              ref={inputRef}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  send();
+                }
+              }}
+              rows={2}
+              placeholder="Type your message…"
+              aria-label="Your message"
+              className="max-h-32 min-h-[44px] flex-1 resize-none border border-line bg-white px-3 py-2 text-[16px] leading-snug outline-none focus:border-steel-dark"
+            />
+            <button
+              type="submit"
+              aria-label="Send on WhatsApp"
+              className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white transition-transform hover:scale-105 active:scale-95"
+            >
+              <SendHorizontal size={20} />
+            </button>
+          </form>
+          <div className="px-3 pb-3 text-center font-tech text-[0.62rem] uppercase tracking-[0.12em] text-steel-base">
+            Opens WhatsApp to send
+          </div>
+        </div>
+      )}
+
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-label={open ? 'Close WhatsApp chat' : 'Chat with Steel Core Operations on WhatsApp'}
+        aria-expanded={open}
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_6px_20px_rgba(26,35,50,0.3)] transition-transform hover:scale-105 active:scale-95"
+      >
+        {open ? <X size={26} /> : <WhatsAppIcon size={28} />}
+      </button>
+    </div>
+  );
+};
 
 export const Links = () => {
   return (
@@ -206,15 +324,7 @@ export const Links = () => {
         </footer>
       </div>
 
-      {/* FLOATING WHATSAPP */}
-      <a
-        href={WHATSAPP}
-        {...newTab}
-        aria-label="Message Steel Core Operations on WhatsApp"
-        className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_6px_20px_rgba(26,35,50,0.3)] transition-transform hover:scale-105 active:scale-95"
-      >
-        <WhatsAppIcon size={28} />
-      </a>
+      <WhatsAppChat />
     </div>
   );
 };
