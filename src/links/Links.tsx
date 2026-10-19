@@ -59,7 +59,7 @@ const IconButton = ({ href, label, children, external }: { href: string; label: 
 export const Links = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-cloud font-body text-[16px] leading-[1.6] text-steel-dark selection:bg-rust-base selection:text-white">
-      <div className="mx-auto max-w-[480px] px-5 pb-12 pt-6">
+      <div className="mx-auto max-w-[480px] px-5 pb-24 pt-6">
         {/* HEADER */}
         <div className="mb-10 flex items-center justify-center">
           <Logo size="sm" />
@@ -187,18 +187,6 @@ export const Links = () => {
           </Button>
         </section>
 
-        {/* WHATSAPP BANNER */}
-        <a href={WHATSAPP} {...newTab} className="group mb-3 flex items-center gap-4 border-l-4 border-rust-base bg-paper px-5 py-4">
-          <span className="flex-shrink-0 text-steel-dark">
-            <WhatsAppIcon size={22} />
-          </span>
-          <div className="flex-1">
-            <div className="font-heading font-bold">Message us on WhatsApp</div>
-            <div className="text-sm text-steel-base">+351 939 383 660</div>
-          </div>
-          <ArrowUpRight size={18} className="text-steel-base transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-        </a>
-
         {/* LINKEDIN BANNER */}
         <a href={LINKEDIN} {...newTab} className="group mb-12 flex items-center gap-4 border-l-4 border-rust-base bg-paper px-5 py-4">
           <Linkedin size={22} className="flex-shrink-0 text-steel-dark" />
@@ -217,6 +205,16 @@ export const Links = () => {
           </a>
         </footer>
       </div>
+
+      {/* FLOATING WHATSAPP */}
+      <a
+        href={WHATSAPP}
+        {...newTab}
+        aria-label="Message Steel Core Operations on WhatsApp"
+        className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_6px_20px_rgba(26,35,50,0.3)] transition-transform hover:scale-105 active:scale-95"
+      >
+        <WhatsAppIcon size={28} />
+      </a>
     </div>
   );
 };
