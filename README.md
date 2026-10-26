@@ -39,6 +39,10 @@ Site is served at `http://localhost:3000`.
 - `/proposals/master-the-curriculum/discovery/` — Discovery Report (unlisted, noindex)
 - `/archive/home-original/` — archived original homepage (unlisted, noindex; kept for reference/reuse)
 
+## Team Hub
+
+`team-hub/` is a separate signed-in app for team.steelcoreoperations.com, deployed as its own Vercel project with Root Directory set to `team-hub`. See [team-hub/README.md](team-hub/README.md).
+
 ## Deploy
 
 Deployed via Vercel. Pushing to `main` triggers a production deploy automatically.
