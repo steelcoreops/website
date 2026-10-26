@@ -40,7 +40,7 @@ export type Block =
   | { id: string; type: 'alert'; label: string; heading: string; body: string }
   | { id: string; type: 'panels'; panels: Panel[] }
   | { id: string; type: 'checklist'; title: string; items: ChecklistItem[] }
-  | { id: string; type: 'people'; people: Person[] }
+  | { id: string; type: 'people'; layout?: 'grid' | 'stacked'; people: Person[] }
   | { id: string; type: 'contacts'; rows: ContactRow[] }
   | { id: string; type: 'rich'; html: string }
   | { id: string; type: 'files'; title: string; files: StoredFile[] }

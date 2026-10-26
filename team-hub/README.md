@@ -25,13 +25,7 @@ React 19, Vite 6, Tailwind 4 and React Router, in the same house style as the ma
    - Site URL: `https://team.steelcoreoperations.com`
    - Redirect URLs: `https://team.steelcoreoperations.com/**` and `http://localhost:3100/**`
 5. Go to **Authentication → SMTP Settings** and add a real email provider, such as Resend or Postmark, sending from `team@steelcoreoperations.com` or similar. Without one, Supabase only delivers email to members of your Supabase organisation, so invites to partners will not arrive.
-6. Go to **Authentication → Email Templates** and update **Magic Link** and **Invite user** so they include the code as well as the link. Corporate email scanners sometimes "click" links and use them up. The code still works when that happens.
-
-   ```html
-   <h2>Sign in to the Steel Core Team Hub</h2>
-   <p><a href="{{ .ConfirmationURL }}">Sign in</a></p>
-   <p>Or enter this code: <strong>{{ .Token }}</strong></p>
-   ```
+6. Go to **Authentication → Email Templates** and paste in the branded templates from `supabase/email-templates/`: `magic-link.html` for **Magic Link** and `invite.html` for **Invite user**. The sign-in email includes a 6-digit code as well as the link, because corporate email scanners sometimes "click" links and use them up; the code still works when that happens.
 
 7. Make yourself the first admin. Go to **Authentication → Users → Invite user** and enter your email. Then run:
 

@@ -4,7 +4,7 @@ import { BLOCK_TYPES, blockLabel, newBlock } from '../../lib/blocks';
 import { embedUrl } from '../../lib/embed';
 import { formatSize, uploadFile, useUploadSpace } from '../../lib/storage';
 import type { Block, BlockType, StoredFile } from '../../lib/types';
-import { Button, Field, IconButton, Input, Label, Notice, Textarea } from '../ui';
+import { Button, Field, IconButton, Input, Label, Notice, Select, Textarea } from '../ui';
 import { RichTextEditor } from './RichTextEditor';
 
 const move = <T,>(list: T[], from: number, to: number) => {
@@ -251,35 +251,43 @@ function BlockForm({ block, onChange }: { block: Block; onChange: (block: Block)
 
     case 'people':
       return (
-        <Repeater
-          noun="Person"
-          min={1}
-          items={block.people}
-          onChange={(people) => onChange({ ...block, people })}
-          make={() => ({ name: '', role: '', remit: '', photo: '', slack: '', email: '' })}
-          render={(p, set) => (
-            <>
-              <div className="grid sm:grid-cols-2 gap-3">
-                <Field label="Name">
-                  <Input value={p.name} onChange={(e) => set({ ...p, name: e.target.value })} />
+        <div className="space-y-4">
+          <Field label="Layout">
+            <Select value={block.layout ?? 'grid'} onChange={(e) => onChange({ ...block, layout: e.target.value as 'grid' | 'stacked' })}>
+              <option value="grid">Side by side</option>
+              <option value="stacked">Stacked, one per row</option>
+            </Select>
+          </Field>
+          <Repeater
+            noun="Person"
+            min={1}
+            items={block.people}
+            onChange={(people) => onChange({ ...block, people })}
+            make={() => ({ name: '', role: '', remit: '', photo: '', slack: '', email: '' })}
+            render={(p, set) => (
+              <>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <Field label="Name">
+                    <Input value={p.name} onChange={(e) => set({ ...p, name: e.target.value })} />
+                  </Field>
+                  <Field label="Role">
+                    <Input value={p.role} onChange={(e) => set({ ...p, role: e.target.value })} />
+                  </Field>
+                  <Field label="Slack">
+                    <Input value={p.slack} placeholder="@name" onChange={(e) => set({ ...p, slack: e.target.value })} />
+                  </Field>
+                  <Field label="Email">
+                    <Input type="email" value={p.email} onChange={(e) => set({ ...p, email: e.target.value })} />
+                  </Field>
+                </div>
+                <Field label="Photo URL" hint="Optional. Leave blank to show initials. Files in /public/team work as /team/name.jpg.">
+                  <Input value={p.photo} onChange={(e) => set({ ...p, photo: e.target.value })} />
                 </Field>
-                <Field label="Role">
-                  <Input value={p.role} onChange={(e) => set({ ...p, role: e.target.value })} />
-                </Field>
-                <Field label="Slack">
-                  <Input value={p.slack} placeholder="@name" onChange={(e) => set({ ...p, slack: e.target.value })} />
-                </Field>
-                <Field label="Email">
-                  <Input type="email" value={p.email} onChange={(e) => set({ ...p, email: e.target.value })} />
-                </Field>
-              </div>
-              <Field label="Photo URL" hint="Optional. Leave blank to show initials. Files in /public/team work as /team/name.jpg.">
-                <Input value={p.photo} onChange={(e) => set({ ...p, photo: e.target.value })} />
-              </Field>
-              <MarkdownField label="What they look after" rows={3} value={p.remit} onChange={(remit) => set({ ...p, remit })} />
-            </>
-          )}
-        />
+                <MarkdownField label="What they look after" rows={3} value={p.remit} onChange={(remit) => set({ ...p, remit })} />
+              </>
+            )}
+          />
+        </div>
       );
 
     case 'rich':
