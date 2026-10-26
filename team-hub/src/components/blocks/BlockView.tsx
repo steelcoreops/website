@@ -72,7 +72,7 @@ const hostOf = (url: string) => {
 };
 
 const BlockTitle = ({ text }: { text: string }) =>
-  text.trim() ? <h3 className="font-display text-lg uppercase tracking-tight leading-tight mb-3">{text}</h3> : null;
+  text.trim() ? <h3 className="font-bold tracking-[-0.01em] text-lg leading-tight mb-3">{text}</h3> : null;
 
 const Inline = ({ source, className = '' }: { source: string; className?: string }) => (
   <span className={className} dangerouslySetInnerHTML={{ __html: renderInline(source) }} />
@@ -98,8 +98,8 @@ function BlockView({ block, num }: { block: Block; num?: number }) {
         <section className={num ? 'pt-4' : ''}>
           {num !== undefined && (
             <div className="flex items-baseline gap-3.5 mb-4 pb-3 border-b border-line">
-              <span className="font-display text-base text-rust-base flex-shrink-0">{pad(num)}</span>
-              <h2 className="font-display text-lg md:text-xl uppercase tracking-tight leading-tight">{block.heading}</h2>
+              <span className="font-mono text-sm font-bold text-rust-base flex-shrink-0">{pad(num)}</span>
+              <h2 className="font-bold tracking-[-0.01em] text-xl md:text-[22px] leading-tight">{block.heading}</h2>
             </div>
           )}
           {block.body.trim() && <Markdown source={block.body} />}
@@ -108,7 +108,7 @@ function BlockView({ block, num }: { block: Block; num?: number }) {
 
     case 'callout':
       return (
-        <div className="border-l-4 border-rust-base bg-paper px-6 py-5">
+        <div className="border-l-4 border-rust-base bg-rust-base/[0.06] rounded-r-sm px-6 py-5">
           {block.label.trim() && <Label className="text-rust-base mb-2">{block.label}</Label>}
           <Markdown source={block.body} />
         </div>
@@ -116,10 +116,10 @@ function BlockView({ block, num }: { block: Block; num?: number }) {
 
     case 'alert':
       return (
-        <div className="bg-steel-dark text-white p-7 md:p-8 rounded-sm">
+        <div className="bg-white border border-rust-base/40 border-l-4 border-l-rust-base p-7 md:p-8 rounded-sm shadow-sm">
           {block.label.trim() && <Label className="text-rust-base mb-3">{block.label}</Label>}
-          {block.heading.trim() && <h3 className="font-display text-xl md:text-2xl uppercase tracking-tight leading-none mb-4">{block.heading}</h3>}
-          <Markdown source={block.body} invert />
+          {block.heading.trim() && <h3 className="font-bold tracking-[-0.01em] text-xl md:text-2xl leading-tight mb-4">{block.heading}</h3>}
+          <Markdown source={block.body} />
         </div>
       );
 
@@ -129,9 +129,9 @@ function BlockView({ block, num }: { block: Block; num?: number }) {
           {block.panels.map((panel, i) => {
             const dark = i === 0;
             return (
-              <div key={i} className={`p-6 rounded-sm ${dark ? 'bg-steel-dark text-white' : 'bg-white border border-line'}`}>
+              <div key={i} className={`p-6 rounded-sm ${dark ? 'bg-paper border border-line' : 'bg-white border border-line'}`}>
                 {panel.title.trim() && <Label className="text-rust-base mb-4">{panel.title}</Label>}
-                <Markdown source={panel.body} invert={dark} className="text-[15px]" />
+                <Markdown source={panel.body} className="text-[15px]" />
               </div>
             );
           })}
@@ -140,16 +140,16 @@ function BlockView({ block, num }: { block: Block; num?: number }) {
 
     case 'checklist':
       return (
-        <div className="border-2 border-steel-dark bg-white rounded-sm overflow-hidden">
+        <div className="border border-line bg-white rounded-sm overflow-hidden shadow-sm">
           {block.title.trim() && (
-            <div className="bg-steel-dark text-white px-5 py-3">
+            <div className="bg-paper border-b border-line text-steel-dark px-5 py-3">
               <Label>{block.title}</Label>
             </div>
           )}
           <ol>
             {block.items.map((item, i) => (
               <li key={i} className="grid grid-cols-[2.4rem_1fr] gap-2 px-5 py-3.5 border-t border-line first:border-t-0">
-                <span className="font-display text-sm text-rust-base pt-0.5">{pad(i + 1)}</span>
+                <span className="font-mono text-sm font-bold text-rust-base pt-0.5">{pad(i + 1)}</span>
                 <span>
                   <Inline source={item.label} className="block font-bold text-[15.5px]" />
                   {item.note.trim() && <Inline source={item.note} className="block text-steel-base text-[14.5px] mt-0.5" />}
@@ -175,7 +175,7 @@ function BlockView({ block, num }: { block: Block; num?: number }) {
           {block.rows.map((row, i) => (
             <div key={i} className="flex flex-wrap items-baseline gap-x-6 gap-y-1 bg-white border border-line rounded-sm px-5 py-4">
               <span className="font-bold text-[15px] sm:min-w-[200px]">{row.label}</span>
-              <Inline source={row.value} className="font-mono text-sm text-steel-base break-all select-all" />
+              <Inline source={row.value} className="text-[15px] text-steel-base break-all select-all" />
             </div>
           ))}
         </div>
@@ -189,7 +189,7 @@ function BlockView({ block, num }: { block: Block; num?: number }) {
         <div>
           <BlockTitle text={block.title} />
           {block.files.length > 0 && (
-            <div className="bg-white border-2 border-steel-dark rounded-sm overflow-hidden">
+            <div className="bg-white border border-line rounded-sm overflow-hidden shadow-sm">
               {block.files.map((file) => (
                 <FileRow key={file.path} file={file} />
               ))}
@@ -235,7 +235,7 @@ function BlockView({ block, num }: { block: Block; num?: number }) {
       }
       return (
         <figure>
-          <div className={`relative w-full bg-steel-dark border-2 border-steel-dark rounded-sm overflow-hidden ${isDocument(src) ? 'aspect-[4/5] sm:aspect-[4/3]' : 'aspect-video'}`}>
+          <div className={`relative w-full bg-steel-dark border border-line rounded-sm overflow-hidden shadow-sm ${isDocument(src) ? 'aspect-[4/5] sm:aspect-[4/3]' : 'aspect-video'}`}>
             <iframe
               src={src}
               title={block.caption.trim() || 'Embedded content'}
@@ -262,11 +262,11 @@ function PersonCard({ person, stacked = false }: { person: Person; stacked?: boo
         <img src={person.photo} alt="" className={`${photoSize} object-cover object-top bg-paper`} loading="lazy" />
       ) : (
         <div className={`${photoSize} bg-steel-dark flex items-center justify-center`}>
-          <span className="font-display text-4xl text-rust-base">{initials(person.name || '?')}</span>
+          <span className="text-4xl font-bold text-rust-base">{initials(person.name || '?')}</span>
         </div>
       )}
       <div className="p-6 flex flex-col flex-1">
-        <h3 className="font-display text-lg uppercase tracking-tight leading-tight">{person.name}</h3>
+        <h3 className="font-bold tracking-[-0.01em] text-lg leading-tight">{person.name}</h3>
         {person.role.trim() && <Label className="text-rust-base mt-1.5 mb-4">{person.role}</Label>}
         {person.remit.trim() && <Markdown source={person.remit} className="text-[15px] mb-5" />}
         {(person.slack.trim() || person.email.trim()) && (
@@ -274,13 +274,13 @@ function PersonCard({ person, stacked = false }: { person: Person; stacked?: boo
             {person.slack.trim() && (
               <div className="flex items-center gap-2">
                 <MessageSquare size={14} className="text-rust-base flex-shrink-0" aria-label="Slack" />
-                <span className="font-mono">{person.slack}</span>
+                <span>{person.slack}</span>
               </div>
             )}
             {person.email.trim() && (
               <div className="flex items-center gap-2 min-w-0">
                 <Mail size={14} className="text-rust-base flex-shrink-0" aria-label="Email" />
-                <a href={`mailto:${person.email}`} className="font-mono truncate hover:text-rust-dark">
+                <a href={`mailto:${person.email}`} className="truncate hover:text-rust-dark">
                   {person.email}
                 </a>
               </div>
