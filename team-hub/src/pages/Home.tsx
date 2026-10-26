@@ -84,7 +84,7 @@ export function Home() {
               className="flex flex-col items-center justify-center gap-2 min-h-[160px] border-2 border-dashed border-line hover:border-rust-base text-steel-base hover:text-rust-dark rounded-sm transition-colors"
             >
               <Plus size={20} />
-              <span className="font-mono text-[11px] font-bold uppercase tracking-[0.14em]">Manage spaces</span>
+              <span className="text-[13px] font-bold">Manage spaces</span>
             </Link>
           )}
         </div>

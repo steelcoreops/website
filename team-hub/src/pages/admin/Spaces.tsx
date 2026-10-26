@@ -101,7 +101,7 @@ function SpaceForm({
         <div className="flex flex-wrap items-center justify-between gap-3">
           <Label className="text-rust-base">{space ? space.name : 'New space'}</Label>
           {space && (
-            <div className="flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.1em] text-steel-base">
+            <div className="flex items-center gap-4 text-[13px] text-steel-base">
               <span>{space.pageCount} pages</span>
               <span>{space.memberCount} members</span>
               <Link to={`/s/${space.slug}`} className="font-bold text-steel-dark hover:text-rust-dark">

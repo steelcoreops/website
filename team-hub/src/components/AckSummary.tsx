@@ -42,7 +42,7 @@ export function AckSummary({ page }: { page: Page }) {
           </div>
           {!page.published && <div className="text-sm text-steel-base">Members can acknowledge once the page is published.</div>}
         </div>
-        <Link to="/admin/sign-offs" className="inline-flex items-center gap-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-steel-base hover:text-rust-dark">
+        <Link to="/admin/sign-offs" className="inline-flex items-center gap-1.5 text-[13px] font-bold text-steel-base hover:text-rust-dark">
           All sign-offs <ArrowRight size={13} />
         </Link>
       </div>

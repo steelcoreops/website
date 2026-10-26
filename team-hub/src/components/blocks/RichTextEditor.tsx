@@ -176,7 +176,7 @@ export function RichTextEditor({ value, onChange }: { value: string; onChange: (
             if (file) addImage(file);
           }}
         />
-        {uploading && <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-steel-base ml-2">Uploading…</span>}
+        {uploading && <span className="text-[13px] text-steel-base ml-2">Uploading…</span>}
       </div>
       <EditorContent editor={editor} />
       {error && <p className="px-4 pb-3 text-sm text-danger">{error}</p>}

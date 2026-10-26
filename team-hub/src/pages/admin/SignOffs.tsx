@@ -124,7 +124,7 @@ export function SignOffs() {
                     <table className="w-full text-sm border-collapse">
                       <thead>
                         <tr className="bg-paper border-b border-line text-left">
-                          <th className="px-5 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.15em] text-steel-base">Person</th>
+                          <th className="px-5 py-3 text-[13px] font-bold text-steel-base">Person</th>
                           {pages.map((p) => (
                             <th key={p.id} className="px-4 py-3 align-bottom min-w-[150px]">
                               <Link to={`/s/${space.slug}/${p.slug}`} className="font-bold text-steel-dark hover:text-rust-dark">
