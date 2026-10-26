@@ -180,6 +180,7 @@ select id, 'the-team', 'The Team', 'Who we are', 'Steel Core runs as a partnersh
   {
     "id": "seed-18",
     "type": "people",
+    "layout": "stacked",
     "people": [
       {
         "name": "Toni Martin",

@@ -75,14 +75,14 @@ export function PageView() {
       )}
 
       {(prev || next) && (
-        <nav className="grid grid-cols-2 gap-4 mt-16 pt-6 border-t-2 border-steel-dark">
+        <nav className="grid grid-cols-2 gap-4 mt-16 pt-6 border-t border-line">
           <div>
             {prev && (
               <Link to={`/s/${space.slug}/${prev.slug}`} className="group block">
                 <span className="flex items-center gap-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-steel-base">
                   <ArrowLeft size={13} /> Previous
                 </span>
-                <span className="block font-display uppercase tracking-tight mt-1 group-hover:text-rust-dark">{prev.title}</span>
+                <span className="block font-bold mt-1 group-hover:text-rust-dark">{prev.title}</span>
               </Link>
             )}
           </div>
@@ -92,7 +92,7 @@ export function PageView() {
                 <span className="flex items-center justify-end gap-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-steel-base">
                   Next <ArrowRight size={13} />
                 </span>
-                <span className="block font-display uppercase tracking-tight mt-1 group-hover:text-rust-dark">{next.title}</span>
+                <span className="block font-bold mt-1 group-hover:text-rust-dark">{next.title}</span>
               </Link>
             )}
           </div>

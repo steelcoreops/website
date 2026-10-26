@@ -4,16 +4,16 @@ type Variant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-rust-base text-white hover:bg-rust-dark shadow-[3px_3px_0_0_var(--color-steel-dark)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]',
+    'bg-rust-base text-white hover:bg-rust-dark shadow-sm',
   secondary:
-    'bg-steel-dark text-white hover:bg-steel-base shadow-[3px_3px_0_0_var(--color-rust-base)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]',
-  outline: 'bg-white border-2 border-steel-dark text-steel-dark hover:bg-steel-dark hover:text-white',
+    'bg-steel-dark text-white hover:bg-steel-base shadow-sm',
+  outline: 'bg-white border border-line text-steel-dark hover:border-steel-base hover:bg-paper',
   ghost: 'text-steel-base hover:text-steel-dark hover:bg-paper',
   danger: 'bg-white border-2 border-danger text-danger hover:bg-danger hover:text-white',
 };
 
 export const buttonClass = (variant: Variant = 'primary', extra = '') =>
-  `inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.14em] whitespace-nowrap transition-all duration-150 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none ${variants[variant]} ${extra}`;
+  `inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold whitespace-nowrap transition-all duration-150 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none ${variants[variant]} ${extra}`;
 
 export function Button({
   variant = 'primary',
@@ -37,21 +37,21 @@ export function IconButton({ label, className = '', ...rest }: ButtonHTMLAttribu
 }
 
 export const Eyebrow = ({ children, className = '' }: { children: ReactNode; className?: string }) => (
-  <div className={`inline-block px-4 py-1.5 bg-steel-dark text-white text-xs font-bold uppercase tracking-[0.18em] ${className}`}>
+  <div className={`inline-block px-3.5 py-1 rounded-full bg-rust-base/10 text-rust-dark text-xs font-bold uppercase tracking-[0.12em] ${className}`}>
     {children}
   </div>
 );
 
 export const Label = ({ children, className = '' }: { children: ReactNode; className?: string }) => (
-  <div className={`font-mono text-[11px] font-bold uppercase tracking-[0.15em] ${className}`}>{children}</div>
+  <div className={`text-[11.5px] font-bold uppercase tracking-[0.1em] ${className}`}>{children}</div>
 );
 
-/** Display title with the last word in rust, as on the marketing site. */
+/** Page title in sentence case, with the last word in rust as on the marketing site. */
 export function Title({ text, className = '' }: { text: string; className?: string }) {
   const words = text.trim().split(/\s+/);
   const last = words.pop();
   return (
-    <h1 className={`font-display uppercase leading-none tracking-tight text-steel-dark text-balance ${className}`}>
+    <h1 className={`font-bold leading-[1.05] tracking-[-0.025em] text-steel-dark text-balance ${className}`}>
       {words.join(' ')}
       {words.length > 0 && ' '}
       <span className="text-rust-base">{last}</span>
@@ -60,7 +60,7 @@ export function Title({ text, className = '' }: { text: string; className?: stri
 }
 
 export const inputClass =
-  'w-full bg-white border-2 border-line focus:border-steel-dark outline-none px-3 py-2.5 text-[15px] text-steel-dark placeholder:text-steel-base/50 rounded-sm transition-colors';
+  'w-full bg-white border border-line focus:border-steel-base focus:ring-2 focus:ring-rust-base/15 outline-none px-3 py-2.5 text-[15px] text-steel-dark placeholder:text-steel-base/50 rounded-sm transition-colors';
 
 export function Field({ label, hint, children }: { label: string; hint?: ReactNode; children: ReactNode }) {
   return (

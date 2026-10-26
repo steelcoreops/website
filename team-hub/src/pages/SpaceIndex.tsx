@@ -70,8 +70,8 @@ export function SpaceIndex() {
       {groups.map(({ topic, pages: list }) =>
         list.length === 0 && !isAdmin ? null : (
           <section key={topic?.id ?? 'none'} className="mt-14">
-            <div className="flex items-baseline gap-3 pb-3 mb-5 border-b-2 border-steel-dark">
-              <h2 className="font-display text-xl md:text-2xl uppercase tracking-tight">{topic?.name ?? 'Other pages'}</h2>
+            <div className="flex items-baseline gap-3 pb-3 mb-5 border-b border-line">
+              <h2 className="font-bold tracking-[-0.01em] text-xl md:text-2xl">{topic?.name ?? 'Other pages'}</h2>
               <span className="font-mono text-[11px] text-steel-base">
                 {list.length} page{list.length === 1 ? '' : 's'}
               </span>

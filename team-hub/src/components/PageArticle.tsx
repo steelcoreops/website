@@ -24,22 +24,22 @@ export function PageArticle({ title, eyebrow, summary, blocks, spaceName, update
       <Title text={title || 'Untitled'} className="text-[clamp(32px,6vw,48px)] mb-6" />
 
       {summary?.trim() && (
-        <div className="text-base md:text-[17px] py-6 border-t-2 border-b-2 border-steel-dark leading-relaxed">{summary}</div>
+        <div className="text-base md:text-[17px] text-steel-base pb-6 border-b border-line leading-relaxed">{summary}</div>
       )}
 
-      <div className={`flex flex-wrap gap-8 py-4 pb-10 font-mono text-xs text-steel-base tracking-[0.05em] ${summary?.trim() ? '' : 'border-t-2 border-steel-dark'}`}>
+      <div className={`flex flex-wrap gap-8 py-4 pb-10 text-[13px] text-steel-base ${summary?.trim() ? '' : 'border-t border-line'}`}>
         <div>
-          <strong className="block text-steel-dark mb-0.5">FOR</strong>
+          <strong className="block text-steel-dark font-bold mb-0.5">For</strong>
           {spaceName}
         </div>
         {updatedAt && (
           <div>
-            <strong className="block text-steel-dark mb-0.5">LAST UPDATED</strong>
+            <strong className="block text-steel-dark font-bold mb-0.5">Last updated</strong>
             {formatDate(updatedAt)}
           </div>
         )}
         <div>
-          <strong className="block text-steel-dark mb-0.5">FROM</strong>
+          <strong className="block text-steel-dark font-bold mb-0.5">From</strong>
           Steel Core Operations LLP
         </div>
       </div>

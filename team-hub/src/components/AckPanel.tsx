@@ -16,7 +16,7 @@ export function AckPanel({ title, status, onAcknowledge }: Props) {
 
   if (status.state === 'done') {
     return (
-      <div className="mt-14 flex items-start gap-3 border-2 border-ok bg-ok/5 px-5 py-4">
+      <div className="mt-14 flex items-start gap-3 border border-ok/40 rounded-sm bg-ok/5 px-5 py-4">
         <CheckCircle2 size={20} className="text-ok flex-shrink-0 mt-0.5" />
         <div>
           <div className="font-bold text-steel-dark">You have read and acknowledged this page</div>
@@ -39,10 +39,10 @@ export function AckPanel({ title, status, onAcknowledge }: Props) {
   };
 
   return (
-    <section className="mt-14 border-2 border-steel-dark bg-white shadow-[4px_4px_0_0_var(--color-rust-base)]" aria-labelledby="ack-heading">
+    <section className="mt-14 border border-line border-l-4 border-l-rust-base rounded-sm bg-white shadow-sm" aria-labelledby="ack-heading">
       <div className="px-5 py-5 md:px-6">
         <Label className="text-rust-base mb-2">Acknowledgement needed</Label>
-        <h2 id="ack-heading" className="font-display uppercase tracking-tight text-xl leading-tight mb-2">
+        <h2 id="ack-heading" className="font-bold tracking-[-0.01em] text-xl leading-tight mb-2">
           {status.state === 'outdated' ? 'This page has changed' : 'Please confirm you have read this'}
         </h2>
         <p className="text-[15px] text-steel-base mb-5 max-w-[60ch]">
