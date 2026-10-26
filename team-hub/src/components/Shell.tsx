@@ -6,7 +6,7 @@ import { Logo } from './Logo';
 import { Eyebrow, Title } from './ui';
 
 const navClass = ({ isActive }: { isActive: boolean }) =>
-  `px-3 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] transition-colors ${
+  `px-3 py-2 text-[13px] font-bold transition-colors ${
     isActive ? 'text-rust-base' : 'text-white/70 hover:text-white'
   }`;
 
@@ -19,7 +19,7 @@ export function Shell() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 min-h-16 flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-2">
           <Link to="/" className="flex items-center gap-4">
             <Logo tone="light" />
-            <span className="hidden sm:inline font-mono text-[11px] uppercase tracking-[0.18em] text-white/50 border-l border-white/20 pl-4">
+            <span className="hidden sm:inline text-[13px] text-white/50 border-l border-white/20 pl-4">
               Team Hub
             </span>
           </Link>
@@ -46,7 +46,7 @@ export function Shell() {
             <button
               type="button"
               onClick={signOut}
-              className="ml-1 inline-flex items-center gap-1.5 px-3 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-white/70 hover:text-white"
+              className="ml-1 inline-flex items-center gap-1.5 px-3 py-2 text-[13px] font-bold text-white/70 hover:text-white"
             >
               <LogOut size={14} /> <span className="hidden sm:inline">Sign out</span>
             </button>
@@ -65,7 +65,7 @@ export function Shell() {
 
 const Footer = () => (
   <footer className="border-t border-line">
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 font-mono text-[11px] tracking-[0.05em] text-steel-base">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 text-xs text-steel-base">
       Steel Core Operations LLP · OC461243 · Confidential, for our team and delivery partners
     </div>
   </footer>

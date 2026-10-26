@@ -124,7 +124,7 @@ function DemoEditor() {
     <div className="pb-24">
       <div className="bg-paper border-b border-line md:sticky md:top-16 z-[25]">
         <div className="max-w-[1000px] mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex border-2 border-steel-dark rounded-sm overflow-hidden" role="tablist">
+          <div className="flex p-1 bg-white border border-line rounded-full" role="tablist">
             {(['edit', 'preview'] as const).map((t) => (
               <button
                 key={t}
@@ -132,7 +132,7 @@ function DemoEditor() {
                 role="tab"
                 aria-selected={tab === t}
                 onClick={() => setTab(t)}
-                className={`px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] ${tab === t ? 'bg-steel-dark text-white' : 'bg-white text-steel-dark hover:bg-cloud'}`}
+                className={`px-4 py-1.5 rounded-full text-[13px] font-bold capitalize transition-colors ${tab === t ? 'bg-steel-dark text-white' : 'text-steel-base hover:text-steel-dark'}`}
               >
                 {t}
               </button>

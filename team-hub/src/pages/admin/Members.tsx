@@ -204,7 +204,7 @@ function MemberRow({
   onDelete: () => void;
 }) {
   const status = statusOf(m);
-  const linkClass = 'font-mono text-[11px] font-bold uppercase tracking-[0.12em] hover:underline underline-offset-4 disabled:opacity-40';
+  const linkClass = 'text-[13px] font-bold hover:underline underline-offset-4 disabled:opacity-40';
   return (
     <div className={`grid md:grid-cols-[1.6fr_1fr_1.4fr_auto] gap-x-4 gap-y-3 px-5 py-4 items-center ${status === 'revoked' ? 'bg-paper/60' : ''}`}>
       <div className="min-w-0">

@@ -100,7 +100,7 @@ const badgeTones = {
 };
 
 export const Badge = ({ children, tone = 'neutral' }: { children: ReactNode; tone?: keyof typeof badgeTones }) => (
-  <span className={`inline-flex items-center px-2 py-0.5 border font-mono text-[10.5px] font-bold uppercase tracking-[0.1em] whitespace-nowrap ${badgeTones[tone]}`}>
+  <span className={`inline-flex items-center px-2.5 py-0.5 border rounded-full text-[12px] font-bold whitespace-nowrap ${badgeTones[tone]}`}>
     {children}
   </span>
 );
@@ -115,7 +115,7 @@ export function Notice({ tone = 'info', children }: { tone?: 'info' | 'error' | 
 }
 
 export const Spinner = ({ label = 'Loading' }: { label?: string }) => (
-  <div className="flex items-center justify-center gap-3 py-24 font-mono text-xs uppercase tracking-[0.15em] text-steel-base" role="status">
+  <div className="flex items-center justify-center gap-3 py-24 text-sm text-steel-base" role="status">
     <span className="w-3 h-3 border-2 border-rust-base rotate-45 animate-spin" />
     {label}
   </div>

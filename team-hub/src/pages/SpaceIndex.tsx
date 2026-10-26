@@ -72,7 +72,7 @@ export function SpaceIndex() {
           <section key={topic?.id ?? 'none'} className="mt-14">
             <div className="flex items-baseline gap-3 pb-3 mb-5 border-b border-line">
               <h2 className="font-bold tracking-[-0.01em] text-xl md:text-2xl">{topic?.name ?? 'Other pages'}</h2>
-              <span className="font-mono text-[11px] text-steel-base">
+              <span className="text-[13px] text-steel-base">
                 {list.length} page{list.length === 1 ? '' : 's'}
               </span>
             </div>
@@ -87,7 +87,7 @@ export function SpaceIndex() {
                   className="flex flex-col items-center justify-center gap-2 min-h-[140px] border-2 border-dashed border-line hover:border-rust-base text-steel-base hover:text-rust-dark rounded-sm transition-colors"
                 >
                   <Plus size={20} />
-                  <span className="font-mono text-[11px] font-bold uppercase tracking-[0.14em]">New page{topic ? ` in ${topic.name}` : ''}</span>
+                  <span className="text-[13px] font-bold">New page{topic ? ` in ${topic.name}` : ''}</span>
                 </Link>
               )}
             </div>

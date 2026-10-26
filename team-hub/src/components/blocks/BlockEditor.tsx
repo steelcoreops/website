@@ -79,7 +79,7 @@ function AddBlock({ onAdd, compact }: { onAdd: (type: BlockType) => void; compac
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="mx-2 inline-flex items-center gap-1.5 px-2.5 py-1 font-mono text-[10.5px] font-bold uppercase tracking-[0.12em] text-steel-base/70 hover:text-rust-dark"
+          className="mx-2 inline-flex items-center gap-1.5 px-2.5 py-1 text-[13px] font-bold text-steel-base/70 hover:text-rust-dark"
         >
           <Plus size={13} /> Add block
         </button>
@@ -159,7 +159,7 @@ function Repeater<T>({
       <button
         type="button"
         onClick={() => onChange([...items, make()])}
-        className="inline-flex items-center gap-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-rust-dark hover:text-steel-dark"
+        className="inline-flex items-center gap-1.5 text-[13px] font-bold text-rust-dark hover:text-steel-dark"
       >
         <Plus size={13} /> Add {noun.toLowerCase()}
       </button>

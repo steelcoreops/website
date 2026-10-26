@@ -25,13 +25,20 @@ export function SpaceSidebar({ spaceName, spaceHref, groups, pageHref, marker, a
   const location = useLocation();
   useEffect(() => setOpen(false), [location.pathname]);
 
-  const contents = (
-    <nav aria-label={`${spaceName} contents`} className="py-5">
-      <NavLink to={spaceHref} end className={({ isActive }) => `block px-4 pb-4 mb-2 border-b border-line text-[11.5px] font-bold uppercase tracking-[0.1em] ${isActive ? 'text-rust-base' : 'text-rust-dark hover:text-rust-base'}`}>
-        {spaceName}
-      </NavLink>
+  // On phones the space name is already in the bar above, so the list opens with an Overview link instead.
+  const contents = (compact: boolean) => (
+    <nav aria-label={`${spaceName} contents`} className={compact ? 'py-3' : 'py-5'}>
+      {compact ? (
+        <NavLink to={spaceHref} end className={pageClass}>
+          Overview
+        </NavLink>
+      ) : (
+        <NavLink to={spaceHref} end className={({ isActive }) => `block px-4 pb-4 mb-2 border-b border-line text-[11.5px] font-bold uppercase tracking-[0.1em] ${isActive ? 'text-rust-base' : 'text-rust-dark hover:text-rust-base'}`}>
+          {spaceName}
+        </NavLink>
+      )}
       {groups.map(({ topic, pages }) => (
-        <div key={topic?.id ?? 'none'} className="mb-4">
+        <div key={topic?.id ?? 'none'} className={compact ? 'mt-3' : 'mb-4'}>
           <div className="px-4 pt-2 pb-1.5 text-[13px] font-bold text-steel-dark">{topic?.name ?? 'Other pages'}</div>
           {pages.length === 0 && <div className="pl-4 py-1.5 text-sm text-steel-base/70 italic">No pages yet</div>}
           {pages.map((p) => (
@@ -58,14 +65,17 @@ export function SpaceSidebar({ spaceName, spaceHref, groups, pageHref, marker, a
   return (
     <>
       <div className="md:hidden bg-white border-b border-line">
-        <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} className="w-full flex items-center justify-between px-4 py-3">
-          <span className="text-[11.5px] font-bold uppercase tracking-[0.1em] text-rust-dark">{spaceName} · Contents</span>
-          <ChevronDown size={16} className={`text-steel-base transition-transform ${open ? 'rotate-180' : ''}`} />
+        <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} className="w-full flex items-center justify-between gap-3 px-4 py-3">
+          <span className="text-[11.5px] font-bold uppercase tracking-[0.1em] text-rust-dark truncate">{spaceName}</span>
+          <span className="flex items-center gap-1.5 text-[13px] font-bold text-steel-base flex-shrink-0">
+            Contents
+            <ChevronDown size={16} className={`transition-transform ${open ? 'rotate-180' : ''}`} />
+          </span>
         </button>
-        {open && <div className="border-t border-line bg-paper max-h-[70vh] overflow-y-auto">{contents}</div>}
+        {open && <div className="border-t border-line bg-paper max-h-[70vh] overflow-y-auto">{contents(true)}</div>}
       </div>
       <aside className="hidden md:block w-64 lg:w-72 flex-shrink-0 border-r border-line bg-paper sticky top-16 self-start h-[calc(100vh-4rem)] overflow-y-auto">
-        {contents}
+        {contents(false)}
       </aside>
     </>
   );
