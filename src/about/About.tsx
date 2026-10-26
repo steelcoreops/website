@@ -7,19 +7,19 @@ import { reveal } from '../marketing/reveal';
 
 const TEAM = [
   {
-    role: 'Operations',
+    role: 'Chief Operations Officer',
     name: 'Rhiannon Leila',
     photo: '/team/rhiannon.jpeg',
     bio: 'Rhiannon makes operations work. She finds the bottlenecks, rebuilds how the work flows and keeps delivery on track once it starts. If it has to run smoothly and keep running, it sits with her.',
   },
   {
-    role: 'Technology',
+    role: 'Chief Technical Officer',
     name: 'Shari Sant',
     photo: '/team/shari.png',
     bio: 'Shari leads on technology and hands-on delivery. She turns the plan into working systems and owns the hardest parts of the build. When something has to be built properly, it goes to Shari.',
   },
   {
-    role: 'Strategy',
+    role: 'Chief Strategy Officer',
     name: 'Toni Martin',
     photo: '/team/toni.jpg',
     bio: 'Toni sets the direction and holds the commercial and technology thinking together. Strategy is her seat at Steel Core, though the technical depth behind it runs deep.',
