@@ -162,9 +162,9 @@ function BlockView({ block, num }: { block: Block; num?: number }) {
 
     case 'people':
       return (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className={block.layout === 'stacked' ? 'space-y-4' : 'grid sm:grid-cols-2 lg:grid-cols-3 gap-4'}>
           {block.people.map((person, i) => (
-            <PersonCard key={i} person={person} />
+            <PersonCard key={i} person={person} stacked={block.layout === 'stacked'} />
           ))}
         </div>
       );
@@ -253,13 +253,15 @@ function BlockView({ block, num }: { block: Block; num?: number }) {
   }
 }
 
-function PersonCard({ person }: { person: Person }) {
+/** Stacked cards sit one per row with the photo beside the text from small screens up. */
+function PersonCard({ person, stacked = false }: { person: Person; stacked?: boolean }) {
+  const photoSize = stacked ? 'w-full aspect-[4/3] sm:w-52 sm:aspect-square flex-shrink-0' : 'w-full aspect-[4/3]';
   return (
-    <div className="bg-white border border-line rounded-sm overflow-hidden flex flex-col">
+    <div className={`bg-white border border-line rounded-sm overflow-hidden flex flex-col ${stacked ? 'sm:flex-row' : ''}`}>
       {person.photo.trim() ? (
-        <img src={person.photo} alt="" className="w-full aspect-[4/3] object-cover object-top bg-paper" loading="lazy" />
+        <img src={person.photo} alt="" className={`${photoSize} object-cover object-top bg-paper`} loading="lazy" />
       ) : (
-        <div className="w-full aspect-[4/3] bg-steel-dark flex items-center justify-center">
+        <div className={`${photoSize} bg-steel-dark flex items-center justify-center`}>
           <span className="font-display text-4xl text-rust-base">{initials(person.name || '?')}</span>
         </div>
       )}
