@@ -183,7 +183,7 @@ select id, 'the-team', 'The Team', 'Who we are', 'Steel Core runs as a partnersh
     "people": [
       {
         "name": "Toni Martin",
-        "role": "Strategy",
+        "role": "Chief Strategy Officer",
         "photo": "/team/toni.jpg",
         "slack": "@toni",
         "email": "toni@steelcoreoperations.com",
@@ -191,7 +191,7 @@ select id, 'the-team', 'The Team', 'Who we are', 'Steel Core runs as a partnersh
       },
       {
         "name": "Rhiannon Leila",
-        "role": "Director of Operations",
+        "role": "Chief Operations Officer",
         "photo": "/team/rhiannon.jpeg",
         "slack": "@rhiannon",
         "email": "rhiannon@steelcoreoperations.com",
@@ -199,7 +199,7 @@ select id, 'the-team', 'The Team', 'Who we are', 'Steel Core runs as a partnersh
       },
       {
         "name": "Shari Sant",
-        "role": "Technology",
+        "role": "Chief Technical Officer",
         "photo": "/team/shari.png",
         "slack": "@shari",
         "email": "shari@steelcoreoperations.com",
